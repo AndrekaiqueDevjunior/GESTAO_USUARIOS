@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Página Inicial - Flask App</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #ffffff;
+        }
+        .custom-container {
+            padding: 20px;
+        }
+        .custom-button {
+            width: 100%;
+            padding: 1rem;
+            margin-bottom: 10px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container custom-container">
+        {% if 'user_id' in session %}
+            <p class="welcome-message">Olá, {{ session["username"] }}!</p>
+            <div class="buttons">
+                <a href="/logout" class="btn btn-logout">Logout</a>
+                <br>
+                <a href="/usuarios" class="btn btn-usuarios">Ver Usuários</a>
+            </div>
+        {% else %}
+            <p><a href="/login" class="btn btn-login">Login</a></p>
+        {% endif %}
+    </div>
+</body>
+</html>
