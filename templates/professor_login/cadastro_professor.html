@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cadastro de Professor</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500&display=swap');
+        * {
+            padding: 0;
+            margin: 0;
+            box-sizing: border-box;
+            font-family: 'Poppins', sans-serif;
+        }
+        body {
+            background-image: url('{{ url_for('static', filename='img/background.png') }}'); /* Caminho correto para a imagem de fundo */
+            background-position: center;
+            background-repeat: no-repeat;
+            background-size: cover;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 20px;
+            min-height: 100vh;
+        }
+        .box {
+            display: flex;
+            width: 930px;
+        }
+        .img-box {
+            background-color: rgba(255, 255, 255, 0.5);
+            width: 50%;
+            display: flex;
+            align-items: center;
+            padding: 20px;
+            border-radius: 20px 0 0 20px;
+        }
+        .img-box img {
+            width: 100%;
+            border-radius: 20px;
+        }
+        .form-box {
+            background-color: rgba(255, 255, 255, 0.4);
+            backdrop-filter: blur(40px);
+            padding: 30px 40px;
+            width: 50%;
+            border-radius: 0 20px 20px 0;
+        }
+        .form-box h2 {
+            font-size: 30px;
+        }
+        .form-box p {
+            font-weight: bold;
+            color: #3D3D3D;
+        }
+        .form-box p a {
+            color: #FF008A;
+            text-decoration: none;
+        }
+        .form-box form {
+            margin: 20px 0;
+        }
+        .input-group {
+            margin-bottom: 15px;
+        }
+        .input-group label {
+            color: #3D3D3D;
+            font-weight: bold;
+            display: block;
+            margin-bottom: 5px;
+        }
+        .input-group input {
+            width: 100%;
+            height: 47px;
+            background-color: rgba(255, 255, 255, 0.32);
+            border-radius: 20px;
+            outline: none;
+            border: 2px solid transparent;
+            padding: 15px;
+            font-size: 15px;
+            color: #616161;
+            transition: all 0.4s ease;
+        }
+        .input-group input:focus {
+            border-color: #ff008869;
+        }
+        .input-group button {
+            width: 100%;
+            height: 47px;
+            background: #FF008A;
+            border-radius: 20px;
+            outline: none;
+            border: none;
+            margin-top: 15px;
+            color: white;
+            cursor: pointer;
+            font-size: 16px;
+        }
+        @media (max-width: 930px) {
+            .img-box {
+                display: none;
+            }
+            .box {
+                width: 700px;
+            }
+            .form-box {
+                width: 100%;
+                border-radius: 20px;
+            }
+        }
+        @media (max-width: 500px) {
+            .w50 {
+                width: 100%;
+                padding: 0;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="box">
+        <div class="img-box">
+            <img src="{{ url_for('static', filename='img/DESENHOS-1068X561.jpg') }}" alt="Imagem de Perfil"> <!-- Caminho correto para a imagem de perfil -->
+        </div>
+        <div class="form-box">
+            <h2>Cadastro Professor</h2>
+            <form action="/professores/new" method="post">
+                <div class="input-group">
+                    <label for="nome">Nome:</label>
+                    <input type="text" id="nome" name="nome" required>
+                </div>
+                <div class="input-group">
+                    <label for="email">Email:</label>
+                    <input type="email" id="email" name="email" required>
+                </div>
+                <div class="input-group">
+                    <label for="senha">Senha:</label>
+                    <input type="password" id="senha" name="senha" required>
+                </div>
+                <div class="input-group">
+                    <label for="telefone">Telefone:</label>
+                    <input type="text" id="telefone" name="telefone" required>
+                </div>
+                <div class="input-group">
+                    <label for="formacao_academica">Formação Acadêmica:</label>
+                    <input type="text" id="formacao_academica" name="formacao_academica" required>
+                </div>
+                <div class="input-group">
+                    <label for="areas_especializacao">Áreas de Especialização:</label>
+                    <input type="text" id="areas_especializacao" name="areas_especializacao" required>
+                </div>
+                <div class="input-group">
+                    <label for="numero_registro_profissional">Número de Registro Profissional:</label>
+                    <input type="text" id="numero_registro_profissional" name="numero_registro_profissional" required>
+                </div>
+                <div class="input-group">
+                    <label for="experiencia_profissional">Experiência Profissional:</label>
+                    <textarea id="experiencia_profissional" name="experiencia_profissional" rows="4" required></textarea>
+                </div>
+                <div class="input-group">
+                    <label for="foto_de_perfil">Foto de Perfil:</label>
+                    <input type="file" id="foto_de_perfil" name="foto_de_perfil">
+                </div>
+                <div class="input-group">
+                    <button type="submit">Criar</button>
+                </div>
+            </form>
+            <p>Já tem uma conta de professor? <a href="professor_login/login_professor.html">Faça login</a></p>
+        </div>
+    </div>
+</body>
+</html>

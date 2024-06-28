@@ -1,6 +1,11 @@
-CREATE TABLE usuarios (
+CREATE TABLE professores (
     id INTEGER PRIMARY KEY AUTOINCREMENT,
-    nome TEXT NOT NULL,
+    nome_completo TEXT NOT NULL,
     email TEXT NOT NULL UNIQUE,
-    senha TEXT NOT NULL
+    telefone TEXT,
+    formacao_academica TEXT,
+    areas_especializacao TEXT,
+    numero_registro_profissional TEXT,
+    experiencia_profissional TEXT,
+    foto_de_perfil TEXT
 );

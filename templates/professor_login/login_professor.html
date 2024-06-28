@@ -1,7 +1,15 @@
 <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Central do Professor</title>
+</head>
+<body>
+    <!DOCTYPE html>
 <html>
 <head>
-    <title>Bem-vindo</title>
+    <title> Login: Professor</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-icons/1.10.0/font/bootstrap-icons.min.css">
@@ -59,7 +67,7 @@
 <body>
     <img source="" >
     <h1>Login</h1>
-    <form action="/login" method="post">
+    <form action="/professores/new" method="post">
         <label for="email">Email:</label>
         <input type="email" id="email" name="email" required><br>
         <label for="senha">Senha:</label>
@@ -68,7 +76,10 @@
     </form>
     <p>Não tem uma conta? <a href="/usuarios/new">Crie uma conta</a></p>
     <p>Você é Aluno? <a href="/usuarios/new">Clique aqui</a></p>
-    <p>Você é Professor? <a href="/professores/new">Clique aqui</a></p>
+    <a href="/" class="btn btn-primary">
+        <i class="bi bi-arrow-left-circle-fill"></i>
+        Voltar para a página inicial
+    </a>
     {% with messages = get_flashed_messages() %}
         {% if messages %}
             <ul>
@@ -82,5 +93,8 @@
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+</html>
+
 </body>
 </html>
